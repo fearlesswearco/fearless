@@ -1,133 +1,113 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fearless Brand</title>
 
-/* BODY */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #0a0a0a;
-    color: #ffffff;
-}
+    <style>
 
-/* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    background-color: #111111;
-    border-bottom: 1px solid #1f1f1f;
-}
+    /* RESET */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #0a0a0a;
+        color: #ffffff;
+    }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        background-color: #111111;
+        border-bottom: 1px solid #1f1f1f;
+    }
 
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    transition: 0.3s;
-}
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
 
-nav ul li a:hover {
-    color: #888;
-}
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 80px 10%;
-}
+    nav ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+    }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
+    nav ul li a:hover {
+        color: #888;
+    }
 
-.hero p {
-    font-size: 18px;
-    color: #aaaaaa;
-}
+    .hero {
+        text-align: center;
+        padding: 80px 10%;
+    }
 
-/* PRODUCTS GRID */
-.products {
-    padding: 60px 8%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-}
+    .products {
+        padding: 60px 8%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 40px;
+    }
 
-/* PRODUCT CARD */
-.product-card {
-    background-color: #141414;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    transition: 0.4s;
-    border: 1px solid #1f1f1f;
-}
+    .product-card {
+        background-color: #141414;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid #1f1f1f;
+        transition: 0.3s;
+    }
 
-.product-card:hover {
-    transform: translateY(-8px);
-    border-color: #333;
-}
+    .product-card:hover {
+        transform: translateY(-8px);
+    }
 
-/* IMAGE */
-.product-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
+    .product-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
 
-/* TITLE */
-.product-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
+    .price {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
 
-/* PRICE */
-.price {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
+    .product-card button {
+        background-color: #ffffff;
+        color: #000;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+    }
 
-/* BUTTON */
-.product-card button {
-    background-color: #ffffff;
-    color: #000;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    .product-card button:hover {
+        background-color: #cccccc;
+    }
 
-.product-card button:hover {
-    background-color: #cccccc;
-}
+    footer {
+        padding: 40px;
+        text-align: center;
+        background-color: #111;
+        color: #777;
+        font-size: 14px;
+        margin-top: 60px;
+    }
 
-/* FOOTER */
-footer {
-    padding: 40px;
-    text-align: center;
-    background-color: #111;
-    color: #777;
-    font-size: 14px;
-    margin-top: 60px;
-}
+    </style>
+</head>
