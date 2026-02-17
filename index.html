@@ -26,7 +26,7 @@ body {
     top: 0;
     width: 100%;
     background: #000;
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid #222;
     z-index: 1000;
 }
 
@@ -57,23 +57,20 @@ body {
     letter-spacing: 2px;
 }
 
-.nav-menu a:hover {
-    opacity: 0.6;
-}
-
 /* HERO */
 .hero {
     height: 100vh;
-    background: #111;
+    background: linear-gradient(to bottom, #111, #000);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
+    margin-top: 80px; /* espaço para navbar */
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
     letter-spacing: 4px;
 }
 
@@ -86,7 +83,7 @@ body {
 /* PRODUTOS */
 .products {
     max-width: 1200px;
-    margin: 100px auto 80px auto;
+    margin: 80px auto;
     padding: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -105,4 +102,98 @@ body {
 .image-container img {
     width: 100%;
     display: block;
-    transition: opacity 0.4s ease, transform
+    transition: opacity 0.4s ease;
+}
+
+.image-container .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.image-container:hover .front {
+    opacity: 0;
+}
+
+.image-container:hover .back {
+    opacity: 1;
+}
+
+.product h2 {
+    margin-top: 15px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.price {
+    margin-top: 5px;
+    color: #aaa;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 25px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #fff;
+    color: #000;
+}
+
+footer {
+    border-top: 1px solid #222;
+    padding: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">FEARLESS</div>
+        <ul class="nav-menu">
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">COLEÇÕES</a></li>
+            <li><a href="#">SOBRE</a></li>
+            <li><a href="#">CONTATO</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="hero">
+    <div>
+        <h1>BUILT FOR THE DISCIPLINED</h1>
+        <p>Fear is temporary. Identity is permanent.</p>
+    </div>
+</section>
+
+<section class="products">
+
+    <div class="product">
+        <div class="image-container">
+            <img src="fearless-wolves-front.png" class="front">
+            <img src="fearless-wolves-back.png" class="back">
+        </div>
+        <h2>FEARLESS WOLVES</h2>
+        <div class="price">R$ 99,00</div>
+        <button>Comprar</button>
+    </div>
+
+</section>
+
+<footer>
+© 2026 FEARLESS. All rights reserved.
+</footer>
+
+</body>
+</html>
