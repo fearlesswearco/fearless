@@ -7,7 +7,7 @@
 
 <style>
 
-/* ===== RESET GERAL ===== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,6 @@ body {
   font-family: Arial, sans-serif;
   background: #0c0c0c;
   color: #f5f5f5;
-  text-align: center;
 }
 
 /* ===== HEADER ===== */
@@ -30,6 +29,7 @@ header {
   top: 0;
   background: #0c0c0c;
   border-bottom: 1px solid #2a2a2a;
+  text-align: center;
   z-index: 10;
 }
 
@@ -41,31 +41,32 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-  padding-top: 110px;
-  padding-bottom: 60px;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  text-align: center;
 }
 
 .hero h1 {
   font-size: 42px;
   letter-spacing: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .hero p {
   max-width: 600px;
   margin: 0 auto 30px auto;
   color: #bbbbbb;
-  font-size: 1.05rem;
 }
 
 .btn {
-  padding: 15px 35px;
+  padding: 14px 32px;
   border: 1px solid #f5f5f5;
   color: #f5f5f5;
   text-decoration: none;
   letter-spacing: 2px;
   transition: 0.3s ease;
   display: inline-block;
+  font-size: 14px;
 }
 
 .btn:hover {
@@ -73,47 +74,59 @@ header {
   border-color: #8f0000;
 }
 
-/* ===== PRODUTO ===== */
-.product-section {
-  padding: 80px 20px;
+/* ===== CATÁLOGO ===== */
+.catalog {
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 50px;
 }
 
-.product-section h2 {
-  letter-spacing: 4px;
-  margin-bottom: 40px;
-  font-size: 30px;
-}
-
-/* imagens lado a lado */
-.product-images {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.product-images img {
-  width: 300px;
-  border: 1px solid #2a2a2a;
+/* ===== CARD DO PRODUTO ===== */
+.product-card {
   background: #111;
-  padding: 10px;
+  border: 1px solid #2a2a2a;
+  padding: 30px 20px;
+  text-align: center;
   transition: 0.3s ease;
 }
 
-.product-images img:hover {
-  transform: scale(1.05);
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: #8f0000;
+}
+
+.product-card h2 {
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+
+.product-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.product-images img {
+  width: 140px;
+  border: 1px solid #2a2a2a;
+  padding: 5px;
+  background: #000;
 }
 
 /* ===== FOOTER ===== */
 footer {
-  padding: 35px 20px;
+  padding: 40px 20px;
   border-top: 1px solid #2a2a2a;
+  text-align: center;
   font-size: 0.85rem;
   color: #777;
+  margin-top: 60px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -123,18 +136,63 @@ footer {
 </header>
 
 <section class="hero">
-  <h1>DISCIPLINA. FORÇA. CONTROLE.</h1>
-  <p>Streetwear minimalista para homens que não seguem o sistema — constroem seu próprio caminho.</p>
+  <h1>CORAGEM. FORÇA. LIBERDADE.</h1>
+  <p>Streetwear para pessoas que não seguem o sistema — constroem seu próprio caminho.</p>
   <a class="btn" href="https://wa.me/5511980214280?text=Quero%20comprar%20Fearless">COMPRAR VIA WHATSAPP</a>
 </section>
 
-<section class="product-section">
-  <h2>FEARLESS ANGEL</h2>
+<section class="catalog">
 
-  <div class="product-images">
-    <img src="fearless-angel-front.png" alt="Fearless Angel Frente">
-    <img src="fearless-angel-back.png" alt="Fearless Angel Costas">
+  <!-- ANGEL -->
+  <div class="product-card">
+    <h2>FEARLESS ANGEL</h2>
+    <div class="product-images">
+      <img src="fearless-angel-front.png" alt="">
+      <img src="fearless-angel-back.png" alt="">
+    </div>
+    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Angel">COMPRAR</a>
   </div>
+
+  <!-- WOLVES -->
+  <div class="product-card">
+    <h2>FEARLESS WOLVES</h2>
+    <div class="product-images">
+      <img src="fearless-wolves-front.png" alt="">
+      <img src="fearless-wolves-back.png" alt="">
+    </div>
+    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Wolves">COMPRAR</a>
+  </div>
+
+  <!-- FREEDOM -->
+  <div class="product-card">
+    <h2>FEARLESS FREEDOM</h2>
+    <div class="product-images">
+      <img src="fearless-freedom-front.png" alt="">
+      <img src="fearless-freedom-back.png" alt="">
+    </div>
+    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Freedom">COMPRAR</a>
+  </div>
+
+  <!-- DOBERMANN -->
+  <div class="product-card">
+    <h2>FEARLESS DOBERMANN</h2>
+    <div class="product-images">
+      <img src="fearless-dobermann-front.png" alt="">
+      <img src="fearless-dobermann-back.png" alt="">
+    </div>
+    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Dobermann">COMPRAR</a>
+  </div>
+
+  <!-- EAGLE -->
+  <div class="product-card">
+    <h2>FEARLESS EAGLE</h2>
+    <div class="product-images">
+      <img src="fearless-eagle-front.png" alt="">
+      <img src="fearless-eagle-back.png" alt="">
+    </div>
+    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Eagle">COMPRAR</a>
+  </div>
+
 </section>
 
 <footer>
