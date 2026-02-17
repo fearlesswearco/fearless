@@ -1,203 +1,374 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FEARLESS</title>
+/* ================================= */
+/* RESET GLOBAL */
+/* ================================= */
 
-<style>
-
-/* ===== RESET ===== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #0c0c0c;
-  color: #f5f5f5;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ===== HEADER ===== */
-header {
-  padding: 25px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: #0c0c0c;
-  border-bottom: 1px solid #2a2a2a;
-  text-align: center;
-  z-index: 10;
+/* ================================= */
+/* NAVBAR PREMIUM */
+/* ================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #111;
+    z-index: 1000;
 }
 
-.logo {
-  font-size: 22px;
-  letter-spacing: 4px;
-  font-weight: bold;
+.nav-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* ===== HERO ===== */
+.nav-logo {
+    font-size: 18px;
+    letter-spacing: 6px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    opacity: 0.6;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ================================= */
+/* HERO SECTION */
+/* ================================= */
+
 .hero {
-  padding-top: 120px;
-  padding-bottom: 80px;
-  text-align: center;
+    height: 100vh;
+    background: url('hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 60px;
 }
 
 .hero h1 {
-  font-size: 42px;
-  letter-spacing: 6px;
-  margin-bottom: 20px;
+    font-size: 42px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
 }
 
 .hero p {
-  max-width: 600px;
-  margin: 0 auto 30px auto;
-  color: #bbbbbb;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #ccc;
+    margin-bottom: 30px;
 }
 
-.btn {
-  padding: 14px 32px;
-  border: 1px solid #f5f5f5;
-  color: #f5f5f5;
-  text-decoration: none;
-  letter-spacing: 2px;
-  transition: 0.3s ease;
-  display: inline-block;
-  font-size: 14px;
+.hero button {
+    padding: 14px 40px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.btn:hover {
-  background: #8f0000;
-  border-color: #8f0000;
+.hero button:hover {
+    background: #fff;
+    color: #000;
 }
 
-/* ===== CATÁLOGO ===== */
-.catalog {
-  padding: 60px 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 50px;
+/* ================================= */
+/* PRODUTOS GRID */
+/* ================================= */
+
+.products {
+    max-width: 1400px;
+    margin: 120px auto 80px auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px;
 }
 
-/* ===== CARD DO PRODUTO ===== */
-.product-card {
-  background: #111;
-  border: 1px solid #2a2a2a;
-  padding: 30px 20px;
-  text-align: center;
-  transition: 0.3s ease;
+.product {
+    text-align: center;
+    transition: 0.3s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  border-color: #8f0000;
+.product:hover {
+    transform: translateY(-8px);
 }
 
-.product-card h2 {
-  margin-bottom: 25px;
-  letter-spacing: 3px;
-  font-size: 18px;
+.image-container {
+    position: relative;
+    overflow: hidden;
 }
 
-.product-images {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
+.image-container img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.product-images img {
-  width: 140px;
-  border: 1px solid #2a2a2a;
-  padding: 5px;
-  background: #000;
+.image-container .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
-/* ===== FOOTER ===== */
+.image-container:hover .front {
+    opacity: 0;
+}
+
+.image-container:hover .back {
+    opacity: 1;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.product h2 {
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.product .price {
+    margin-top: 8px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.product button {
+    margin-top: 15px;
+    padding: 12px 30px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ================================= */
+/* PRODUCT PAGE */
+/* ================================= */
+
+.product-page {
+    max-width: 1400px;
+    margin: 140px auto 80px auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.product-gallery img {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.product-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.product-info h1 {
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.product-info .price {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.size-selector {
+    margin: 20px 0;
+}
+
+.size-selector button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #555;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.size-selector button:hover {
+    border-color: #fff;
+}
+
+.add-cart {
+    padding: 14px 40px;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* ================================= */
+/* ACCORDION (TABELA / POLÍTICA) */
+/* ================================= */
+
+.accordion {
+    margin-top: 30px;
+}
+
+.accordion-item {
+    border-top: 1px solid #222;
+}
+
+.accordion-header {
+    padding: 15px 0;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* ================================= */
+/* CARRINHO */
+/* ================================= */
+
+.cart-page {
+    max-width: 1000px;
+    margin: 140px auto;
+    padding: 40px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #222;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* ================================= */
+/* SOBRE */
+/* ================================= */
+
+.about {
+    max-width: 900px;
+    margin: 140px auto;
+    padding: 40px;
+    text-align: center;
+}
+
+.about h1 {
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.about p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ================================= */
+/* FOOTER */
+/* ================================= */
+
 footer {
-  padding: 40px 20px;
-  border-top: 1px solid #2a2a2a;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 60px;
+    border-top: 1px solid #111;
+    padding: 60px 40px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #666;
 }
 
-</style>
-</head>
+/* ================================= */
+/* RESPONSIVO */
+/* ================================= */
 
-<body>
+@media (max-width: 768px) {
 
-<header>
-  <div class="logo">FEARLESS</div>
-</header>
+    .nav-container {
+        padding: 15px 20px;
+    }
 
-<section class="hero">
-  <h1>CORAGEM. FORÇA. LIBERDADE.</h1>
-  <p>Streetwear para pessoas que não seguem o sistema — constroem seu próprio caminho.</p>
-  <a class="btn" href="https://wa.me/5511980214280?text=Quero%20comprar%20Fearless">COMPRAR VIA WHATSAPP</a>
-</section>
+    .nav-menu {
+        display: none;
+    }
 
-<section class="catalog">
+    .hero h1 {
+        font-size: 28px;
+    }
 
-  <!-- ANGEL -->
-  <div class="product-card">
-    <h2>FEARLESS ANGEL</h2>
-    <div class="product-images">
-      <img src="fearless-angel-front.png" alt="">
-      <img src="fearless-angel-back.png" alt="">
-    </div>
-    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Angel">COMPRAR</a>
-  </div>
+    .products {
+        padding: 20px;
+        gap: 40px;
+    }
 
-  <!-- WOLVES -->
-  <div class="product-card">
-    <h2>FEARLESS WOLVES</h2>
-    <div class="product-images">
-      <img src="fearless-wolves-front.png" alt="">
-      <img src="fearless-wolves-back.png" alt="">
-    </div>
-    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Wolves">COMPRAR</a>
-  </div>
-
-  <!-- FREEDOM -->
-  <div class="product-card">
-    <h2>FEARLESS FREEDOM</h2>
-    <div class="product-images">
-      <img src="fearless-freedom-front.png" alt="">
-      <img src="fearless-freedom-back.png" alt="">
-    </div>
-    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Freedom">COMPRAR</a>
-  </div>
-
-  <!-- DOBERMANN -->
-  <div class="product-card">
-    <h2>FEARLESS DOBERMANN</h2>
-    <div class="product-images">
-      <img src="fearless-dobermann-front.png" alt="">
-      <img src="fearless-dobermann-back.png" alt="">
-    </div>
-    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Dobermann">COMPRAR</a>
-  </div>
-
-  <!-- EAGLE -->
-  <div class="product-card">
-    <h2>FEARLESS EAGLE</h2>
-    <div class="product-images">
-      <img src="fearless-eagle-front.png" alt="">
-      <img src="fearless-eagle-back.png" alt="">
-    </div>
-    <a class="btn" href="https://wa.me/5511980214280?text=Quero%20Fearless%20Eagle">COMPRAR</a>
-  </div>
-
-</section>
-
-<footer>
-  <p>© 2026 FEARLESS — Todos os direitos reservados</p>
-</footer>
-
-</body>
-</html>
+    .product-page {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
