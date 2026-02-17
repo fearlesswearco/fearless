@@ -1,113 +1,204 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fearless Brand</title>
+/* ========================= */
+/* RESET GLOBAL */
+/* ========================= */
 
-    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    /* RESET */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+body {
+    background-color: #050505;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.5px;
+}
 
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background-color: #0a0a0a;
-        color: #ffffff;
-    }
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header {
+    padding: 100px 20px 60px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 34px;
+    letter-spacing: 8px;
+    font-weight: 500;
+}
+
+header p {
+    margin-top: 18px;
+    color: #777;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* ========================= */
+/* GRID DE PRODUTOS */
+/* ========================= */
+
+.products {
+    max-width: 1500px;
+    margin: auto;
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 70px;
+}
+
+/* ========================= */
+/* CARD PRODUTO */
+/* ========================= */
+
+.product {
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+/* ========================= */
+/* CONTAINER IMAGEM */
+/* ========================= */
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #0e0e0e;
+}
+
+/* IMAGENS */
+.image-container img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.5s ease, transform 0.6s ease;
+}
+
+/* IMAGEM BACK */
+.image-container .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* HOVER TROCA */
+.image-container:hover .front {
+    opacity: 0;
+}
+
+.image-container:hover .back {
+    opacity: 1;
+}
+
+/* ZOOM MAIS SUAVE */
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* TEXTO PRODUTO */
+/* ========================= */
+
+.product h2 {
+    margin-top: 28px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.product p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #cccccc;
+    font-weight: 500;
+}
+
+/* PREÇO DESTACADO */
+.product .price {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* ========================= */
+/* BOTÃO PREMIUM */
+/* ========================= */
+
+button {
+    margin-top: 20px;
+    padding: 14px 40px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    letter-spacing: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 3px;
+    border-top: 1px solid #111;
+    margin-top: 100px;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 768px) {
 
     header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 8%;
-        background-color: #111111;
-        border-bottom: 1px solid #1f1f1f;
+        padding: 70px 20px 40px 20px;
     }
 
-    .logo {
+    header h1 {
         font-size: 24px;
-        font-weight: 700;
-        letter-spacing: 2px;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #ffffff;
-        font-weight: 500;
-    }
-
-    nav ul li a:hover {
-        color: #888;
-    }
-
-    .hero {
-        text-align: center;
-        padding: 80px 10%;
+        letter-spacing: 5px;
     }
 
     .products {
-        padding: 60px 8%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 30px;
         gap: 40px;
     }
 
-    .product-card {
-        background-color: #141414;
-        padding: 20px;
-        border-radius: 12px;
-        text-align: center;
-        border: 1px solid #1f1f1f;
-        transition: 0.3s;
-    }
-
-    .product-card:hover {
-        transform: translateY(-8px);
-    }
-
-    .product-card img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-
-    .price {
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 15px;
-    }
-
-    .product-card button {
-        background-color: #ffffff;
-        color: #000;
-        border: none;
-        padding: 12px 25px;
-        border-radius: 30px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .product-card button:hover {
-        background-color: #cccccc;
-    }
-
-    footer {
-        padding: 40px;
-        text-align: center;
-        background-color: #111;
-        color: #777;
+    .product h2 {
         font-size: 14px;
-        margin-top: 60px;
     }
 
-    </style>
-</head>
+    .product .price {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px 28px;
+        font-size: 10px;
+    }
+}
