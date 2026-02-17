@@ -1,56 +1,52 @@
-/* ================================= */
-/* RESET GLOBAL */
-/* ================================= */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FEARLESS</title>
 
+<style>
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: #000;
+    background: #000;
     color: #fff;
-    font-family: 'Arial', sans-serif;
-    -webkit-font-smoothing: antialiased;
+    font-family: Arial, sans-serif;
 }
 
-/* ================================= */
-/* NAVBAR PREMIUM */
-/* ================================= */
-
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    background: #000;
     border-bottom: 1px solid #111;
     z-index: 1000;
 }
 
 .nav-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: auto;
-    padding: 20px 40px;
+    padding: 20px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-logo {
-    font-size: 18px;
     letter-spacing: 6px;
-    font-weight: 600;
+    font-size: 18px;
 }
 
 .nav-menu {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     list-style: none;
 }
 
@@ -59,87 +55,46 @@ body {
     color: #fff;
     font-size: 12px;
     letter-spacing: 2px;
-    transition: 0.3s;
 }
 
 .nav-menu a:hover {
     opacity: 0.6;
 }
 
-.nav-icons {
-    display: flex;
-    gap: 20px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-/* ================================= */
-/* HERO SECTION */
-/* ================================= */
-
+/* HERO */
 .hero {
     height: 100vh;
-    background: url('hero.jpg') center/cover no-repeat;
+    background: #111;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 20px;
 }
 
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 60px;
-}
-
 .hero h1 {
-    font-size: 42px;
+    font-size: 40px;
     letter-spacing: 4px;
-    margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 14px;
+    margin-top: 15px;
+    color: #aaa;
     letter-spacing: 2px;
-    color: #ccc;
-    margin-bottom: 30px;
 }
 
-.hero button {
-    padding: 14px 40px;
-    border: 1px solid #fff;
-    background: transparent;
-    color: #fff;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.hero button:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* ================================= */
-/* PRODUTOS GRID */
-/* ================================= */
-
+/* PRODUTOS */
 .products {
-    max-width: 1400px;
-    margin: 120px auto 80px auto;
+    max-width: 1200px;
+    margin: 100px auto 80px auto;
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
 }
 
 .product {
     text-align: center;
-    transition: 0.3s ease;
-}
-
-.product:hover {
-    transform: translateY(-8px);
 }
 
 .image-container {
@@ -150,225 +105,4 @@ body {
 .image-container img {
     width: 100%;
     display: block;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.image-container .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.image-container:hover .front {
-    opacity: 0;
-}
-
-.image-container:hover .back {
-    opacity: 1;
-}
-
-.image-container:hover img {
-    transform: scale(1.05);
-}
-
-.product h2 {
-    margin-top: 20px;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
-.product .price {
-    margin-top: 8px;
-    color: #aaa;
-    font-size: 14px;
-}
-
-.product button {
-    margin-top: 15px;
-    padding: 12px 30px;
-    border: 1px solid #fff;
-    background: transparent;
-    color: #fff;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.product button:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* ================================= */
-/* PRODUCT PAGE */
-/* ================================= */
-
-.product-page {
-    max-width: 1400px;
-    margin: 140px auto 80px auto;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-}
-
-.product-gallery img {
-    width: 100%;
-    transition: 0.3s;
-}
-
-.product-gallery img:hover {
-    transform: scale(1.05);
-}
-
-.product-info h1 {
-    font-size: 24px;
-    letter-spacing: 3px;
-}
-
-.product-info .price {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.size-selector {
-    margin: 20px 0;
-}
-
-.size-selector button {
-    margin-right: 10px;
-    padding: 8px 16px;
-    background: transparent;
-    border: 1px solid #555;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.size-selector button:hover {
-    border-color: #fff;
-}
-
-.add-cart {
-    padding: 14px 40px;
-    background: #fff;
-    color: #000;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-/* ================================= */
-/* ACCORDION (TABELA / POLÍTICA) */
-/* ================================= */
-
-.accordion {
-    margin-top: 30px;
-}
-
-.accordion-item {
-    border-top: 1px solid #222;
-}
-
-.accordion-header {
-    padding: 15px 0;
-    cursor: pointer;
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    font-size: 13px;
-    color: #aaa;
-}
-
-/* ================================= */
-/* CARRINHO */
-/* ================================= */
-
-.cart-page {
-    max-width: 1000px;
-    margin: 140px auto;
-    padding: 40px;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
-    border-bottom: 1px solid #222;
-}
-
-.cart-total {
-    text-align: right;
-    margin-top: 30px;
-    font-size: 18px;
-}
-
-/* ================================= */
-/* SOBRE */
-/* ================================= */
-
-.about {
-    max-width: 900px;
-    margin: 140px auto;
-    padding: 40px;
-    text-align: center;
-}
-
-.about h1 {
-    letter-spacing: 4px;
-    margin-bottom: 30px;
-}
-
-.about p {
-    color: #aaa;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-/* ================================= */
-/* FOOTER */
-/* ================================= */
-
-footer {
-    border-top: 1px solid #111;
-    padding: 60px 40px;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #666;
-}
-
-/* ================================= */
-/* RESPONSIVO */
-/* ================================= */
-
-@media (max-width: 768px) {
-
-    .nav-container {
-        padding: 15px 20px;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .products {
-        padding: 20px;
-        gap: 40px;
-    }
-
-    .product-page {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
+    transition: opacity 0.4s ease, transform
